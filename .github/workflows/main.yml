@@ -49,6 +49,6 @@ jobs:
         run: |
           git config --global user.name ${{ secrets.username }}
           git config --global user.email ${{ secrets.email }}
-          git add mlruns/
-          git commit -m "Save mlruns from CI run"
-          git push origin master
+          git add preprocessing/titanic_preprocessing.csv
+          git commit -m "Auto-generated: Update titanic_preprocessing.csv by GitHub Action" || echo "No changes to commit"
+          git push
