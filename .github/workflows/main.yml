@@ -30,11 +30,13 @@ jobs:
         run: |
           echo $CSV_URL
  
-      # Install mlflow
-      # - name: Install dependencies
-      #   run: |
-      #     python -m pip install --upgrade pip
-      #     pip install mlflow==2.19.0
+      # Menginstal library yang dibutuhkan
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Install library dengan versi spesifik untuk menjaga konsistensi (reproducibility)
+          pip install pandas==2.2.2 numpy==1.26.4 scikit-learn==1.4.2 mlflow==2.19.0
+
       
       # Menjalankan script preprocessing otomatis
       - name: Run Preprocessing Script
